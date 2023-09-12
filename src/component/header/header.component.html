@@ -1,0 +1,12 @@
+<div class="header-container">
+  <img class="logo" src="/assets/logo.png" alt="logo"/>
+  <form class="search" (ngSubmit)="onSearch($event)">
+    <input class="search-input"
+           type="text"
+           [formControl]="searchControl"
+    />
+    <button (submit)="onSearch($event)">
+      <img src="/assets/search.svg" alt="search icon"/>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="pagination">
+  <button (click)="onLimitPage(true)">
+    <img src="/assets/move-to-start.svg" alt="page-start"/>
+  </button>
+  <button (click)="onChangePage(false)">
+    <img src="/assets/chevron-left.svg" alt="page-left"/>
+  </button>
+  <span class="page">{{ page }}</span>
+  <button (click)="onChangePage(true)">
+    <img src="/assets/chevron-right.svg" alt="page-right"/>
+  </button>
+  <button (click)="onLimitPage(false)">
+    <img src="/assets/move-to-end.svg" alt="page-end"/>
+  </button>
+</div>

@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #BDCDD6;
+  margin: 0 0 64px 0;
+  padding-bottom: 64px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #BDCDD6;
+  --primary: #93BFCF;
+  --secondary: #6096B4;
+}

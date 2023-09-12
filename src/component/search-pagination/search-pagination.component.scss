@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  & > .page {
+    font-size: 20px;
+    margin-left: 16px;
+  }
+}
