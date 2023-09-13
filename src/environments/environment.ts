@@ -5,5 +5,5 @@
  */
 export const environment = {
   production: false,
-  githubToken: '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'
+  githubToken: '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'
 };
