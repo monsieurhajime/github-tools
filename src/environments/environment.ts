@@ -5,5 +5,5 @@
  */
 export const environment = {
   production: false,
-  githubToken: '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'
+  githubToken: 'Your token'
 };
