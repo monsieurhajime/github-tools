@@ -1,33 +1,35 @@
-<a
-  *ngFor="let repository of repositoryList"
-  class="repository"
-  [routerLink]="[
+<ng-container *ngIf="!isLoading">
+  <a
+    *ngFor="let repository of repositoryList"
+    class="repository"
+    [routerLink]="[
     '/repository',
     getRepositoryLink(repository.fullName)[0],
     getRepositoryLink(repository.fullName)[1]
   ]"
->
+  >
   <span class="row header full-width">
     <img class="avatar" [src]="repository.avatarUrl"/>
     <strong>{{ repository.fullName }}</strong>
     <img class="star flex-left" src="/assets/star.svg"/>
     <span>{{ repository.stargazersCount }}</span>
   </span>
-  <span class="row description">
+    <span class="row description">
     {{ repository.description }}
   </span>
-  <span class="row row-topic">
+    <span class="row row-topic">
     <strong class="topic-container" *ngFor="let topic of repository.topics">
       {{ topic }}
     </strong>
   </span>
-  <span class="row full-width">
+    <span class="row full-width">
     <span class="language">{{ repository.language }}</span>
     <span class="flex-left">
       {{ repository.lastUpdate }}
     </span>
   </span>
-</a>
+  </a>
 
-<search-pagination *ngIf="repositoryList.length > 0">
-</search-pagination>
+  <search-pagination *ngIf="repositoryList.length > 0">
+  </search-pagination>
+</ng-container>

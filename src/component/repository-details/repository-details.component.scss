@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+  .title {
+    display: inline;
+    color: var(--font-color);
+    background-color: var(--third);
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 0;
+  }
+}
+
+.contributor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contributor {
+  margin: 16px;
+}

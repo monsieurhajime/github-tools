@@ -9,8 +9,6 @@ import {
   mergeMap,
   Observable,
   of,
-  retry,
-  retryWhen,
   throwError
 } from "rxjs";
 import { RepositoryStateService } from "./repository-state.service";
@@ -20,7 +18,6 @@ import { PaginationService } from "./pagination.service";
 export class GithubService {
   private requestPending = new BehaviorSubject<boolean>(false);
   public requestPending$ = this.requestPending.asObservable();
-
 
   private octokit = new Octokit({ auth: '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' });
 
@@ -45,9 +42,18 @@ export class GithubService {
 
   public async getContributors(owner: string, repositoryName: string): Promise<any> {
     const contributors$ = this.queryContributors(owner, repositoryName);
-    return await firstValueFrom(contributors$);
+    this.requestPending.next(true);
+    const contributors = await firstValueFrom(contributors$);
+    this.requestPending.next(false);
+
+    return contributors;
   }
 
+  /**
+   * The API here is very slow, it will prepare the data after the first request and send 202
+   * We are supposed to try requesting the data after a few seconds.
+   * At some point it will return 200 when it's ready.
+   */
   private queryContributors(owner: string, repositoryName: string, retries = 4): Observable<any> {
     if (retries <= 0) {
       return throwError(() => new Error('Max retries reached'));

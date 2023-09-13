@@ -10,18 +10,20 @@ import { Subscription } from "rxjs";
 export class AppComponent implements OnDestroy {
   public isLoading = false;
 
-  private readonly subscription: Subscription;
+  private readonly loadingSubscription: Subscription;
 
   constructor(
     private readonly githubService: GithubService,
   ) {
-    this.subscription = this.githubService.requestPending$.subscribe((value) => {
-      this.isLoading = value;
+    this.loadingSubscription = this.githubService.requestPending$.subscribe((value) => {
+      setTimeout(() => {
+        this.isLoading = value;
+      })
     })
   }
 
   ngOnDestroy() {
-    if (this.subscription && !this.subscription.closed)
-      this.subscription.unsubscribe();
+    if (this.loadingSubscription && !this.loadingSubscription.closed)
+      this.loadingSubscription.unsubscribe();
   }
 }

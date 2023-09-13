@@ -1,0 +1,13 @@
+<div class="contributor">
+  <img src="{{ avatarUrl }}" alt="avatar"/>
+  <div>
+    <h2>{{ name }}</h2>
+    <span class="information-row">
+      <p class="commit">{{ totalCommit }} {{ totalCommit > 1 ? 'commits' : 'commit' }}</p>
+      <p class="addition">{{ totalAddition }} ++</p>
+      <p class="deletion">{{ totalDeletion }} --</p>
+    </span>
+  </div>
+</div>
+
+<div #chartContainer></div>

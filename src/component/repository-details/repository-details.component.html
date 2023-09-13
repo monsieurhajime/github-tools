@@ -1,1 +1,21 @@
+<ng-container *ngIf="!isLoading">
+  <div class="title-container">
+    <h2 class="title" >{{ owner }}/{{ repositoryName }}</h2>
+  </div>
 
+  <div class="contributor-container">
+    <div *ngFor="let contributor of contributors"
+         class="contributor"
+    >
+      <contribution-details
+        [name]="contributor.name"
+        [chart]="contributor.chart"
+        [totalCommit]="contributor.totalCommit"
+        [totalAddition]="contributor.totalAddition"
+        [totalDeletion]="contributor.totalDeletion"
+        [avatarUrl]="contributor.avatarUrl"
+      >
+      </contribution-details>
+    </div>
+  </div>
+</ng-container>

@@ -4,7 +4,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: #BDCDD6;
+  background-color: var(--bg-color);
   margin: 0 0 64px 0;
   padding-bottom: 64px;
   box-sizing: border-box;
@@ -23,7 +23,9 @@ div {
 }
 
 :root {
-  --bg-color: #BDCDD6;
-  --primary: #93BFCF;
-  --secondary: #6096B4;
+  --bg-color: #F9F7F7;
+  --primary: #DBE2EF;
+  --secondary: #3F72AF;
+  --third: #112D4E;
+  --font-color: white;
 }
