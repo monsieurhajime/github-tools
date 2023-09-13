@@ -34,6 +34,7 @@ export class RepositoryDetailsComponent implements OnInit, OnDestroy {
     this.githubService.getContributors(this.owner, this.repositoryName)
       .then(response => {
         const contributorsApi = response.data;
+        const contributors: Array<Contributor> = [];
 
         for (let i = 0; i < contributorsApi.length; ++i) {
           const contribution = this.calculateContribution(contributorsApi[i]);
@@ -41,13 +42,15 @@ export class RepositoryDetailsComponent implements OnInit, OnDestroy {
           const avatarUrl = contributorsApi[i].author.avatar_url;
           const chart = this.createChart(contribution.impactPerMonthArr);
 
-          this.contributors.push({
+          contributors.push({
             ...contribution,
             avatarUrl,
             name,
             chart,
           })
         }
+
+        this.contributors = contributors.sort((a, b) => b.totalCommit - a.totalCommit);
       });
   }
 
