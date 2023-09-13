@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+
 import { SearchPaginationComponent } from "./search-pagination.component";
 
 @NgModule({

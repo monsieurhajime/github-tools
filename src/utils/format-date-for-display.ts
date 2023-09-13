@@ -5,7 +5,7 @@ export const formatDateForDisplay = (dateString: string): string => {
   const minute = 60 * 1000;
   const hour = minute * 60;
   const day = hour * 24;
-  const month = day * 30; // Simplifying a month as 30 days
+  const month = day * 30;
 
   const elapsed = now.getTime() - parsedDate.getTime();
 

@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
-import { GithubService } from "../services/github.service";
 import { Subscription } from "rxjs";
+
+import { GithubService } from "../services/github.service";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.loadingSubscription && !this.loadingSubscription.closed)
+    if (this.loadingSubscription && !this.loadingSubscription.closed) {
       this.loadingSubscription.unsubscribe();
+    }
   }
 }

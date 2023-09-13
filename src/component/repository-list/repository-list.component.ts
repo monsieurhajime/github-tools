@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+
 import { RepositoryStateService } from "../../services/repository-state.service";
 import { Repository } from "../../models/repository";
-import { Subscription } from "rxjs";
 import { GithubService } from "../../services/github.service";
 
 @Component({

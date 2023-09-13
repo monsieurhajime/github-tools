@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
-import { HeaderComponent } from "./header.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { HeaderComponent } from "./header.component";
 
 @NgModule({
   declarations: [

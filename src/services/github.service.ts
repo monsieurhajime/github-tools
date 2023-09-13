@@ -13,13 +13,14 @@ import {
 } from "rxjs";
 import { RepositoryStateService } from "./repository-state.service";
 import { PaginationService } from "./pagination.service";
+import { environment } from "../environments/environment";
 
 @Injectable({ providedIn: 'root' })
 export class GithubService {
   private requestPending = new BehaviorSubject<boolean>(false);
   public requestPending$ = this.requestPending.asObservable();
 
-  private octokit = new Octokit({ auth: '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' });
+  private octokit = new Octokit({ auth: environment.githubToken });
 
   constructor(
     private readonly repositoryStateService: RepositoryStateService,

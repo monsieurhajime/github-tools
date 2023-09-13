@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { GithubService } from "../../services/github.service";
-import { Subscription } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
+import { Subscription } from "rxjs";
+
+import { GithubService } from "../../services/github.service";
 import { PaginationService } from "../../services/pagination.service";
 
 @Component({

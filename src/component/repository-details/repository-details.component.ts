@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import * as Plot from "@observablehq/plot";
+import { Subscription } from "rxjs";
+
 import { GithubService } from "../../services/github.service";
 import { Contributor, ContributorAPI, ImpactPerMonth } from "../../models/contributor";
-import { Subscription } from "rxjs";
 
 @Component({
   selector: 'repository-details',

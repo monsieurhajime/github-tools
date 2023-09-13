@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
+
 import { PaginationService } from "../../services/pagination.service";
 
 @Component({
